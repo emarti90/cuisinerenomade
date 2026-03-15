@@ -19,8 +19,8 @@ const nav: Record<string, NavItem[]> = {
   ],
   Acknowledgements: [
     { label: "Freepik",                   href: "#batch-cooking"  },
-    { label: "Kamran Aydinov - Freepik",  href: "#brunch"         },
     { label: "rawpixel.com - Freepik",    href: "#delivery"       },
+    { label: "Kamran Aydinov - Freepik",  href: "#brunch"         },
   ],
 };
 
