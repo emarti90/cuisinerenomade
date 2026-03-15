@@ -3,7 +3,7 @@ import { GiWheat, GiAlarmClock } from "react-icons/gi";
 import { FaSnowflake } from "react-icons/fa";
 import { LuHandPlatter } from "react-icons/lu";
 import { MdCheckCircleOutline } from "react-icons/md";
-import { BODY, DISPLAY, reveal } from "../../lib/constants";
+import { BODY, C_PRIMARY, C_SECONDARY, C_ACCENT, DISPLAY, reveal } from "../../lib/constants";
 import { DecorNum, ServiceLabel, WaBtn } from "../../lib/ui";
 import { useReveal } from "../../lib/hooks";
 
@@ -36,7 +36,7 @@ export default function BatchCookingSection() {
       id="batch-cooking"
       ref={ref}
       style={{
-        background: "#F5ECD7",
+        background: C_SECONDARY,
         padding: "120px 0",
         overflow: "hidden",
         position: "relative",
@@ -65,27 +65,10 @@ export default function BatchCookingSection() {
         >
           <div style={{ position: "relative", aspectRatio: "4/5", overflow: "hidden" }}>
             <img
-              src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=900&q=80"
+              src="images/batch.webp"
               alt="Batch cooking"
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
             />
-            <div
-              style={{
-                position: "absolute",
-                bottom: "-24px",
-                right: "-24px",
-                background: "#2A1C12",
-                padding: "22px 26px",
-                minWidth: "150px",
-              }}
-            >
-              <div style={{ fontFamily: DISPLAY, fontSize: "44px", fontWeight: 400, color: "#D4A373", lineHeight: 1 }}>
-                8
-              </div>
-              <div style={{ fontFamily: BODY, fontSize: "9px", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "#C8B08A", marginTop: "6px" }}>
-                repas par semaine
-              </div>
-            </div>
           </div>
         </div>
 
@@ -93,13 +76,13 @@ export default function BatchCookingSection() {
         <div style={{ paddingLeft: "16px" }}>
           <div data-reveal style={reveal}>
             <ServiceLabel n="Batch Cooking à Domicile" />
-            <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(56px,6vw,84px)", fontWeight: 400, lineHeight: 1, color: "#2A1C12", marginBottom: "8px" }}>
+            <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(56px,6vw,84px)", fontWeight: 400, lineHeight: 1, color: C_PRIMARY, marginBottom: "8px" }}>
               Batch Cooking
             </h2>
-            <p style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#8B5E3C", marginBottom: "20px" }}>
+            <p style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: C_ACCENT, marginBottom: "20px" }}>
               Des repas faits maison pour toute la semaine
             </p>
-            <p style={{ fontFamily: BODY, fontSize: "14px", fontWeight: 300, lineHeight: 1.85, color: "#5C3D24", marginBottom: "32px", maxWidth: "420px" }}>
+            <p style={{ fontFamily: BODY, fontSize: "14px", fontWeight: 300, lineHeight: 1.85, color: C_ACCENT, marginBottom: "32px", maxWidth: "420px" }}>
               Le batch cooking vous permet d'avoir plusieurs repas prêts à l'avance, cuisinés directement dans votre cuisine avec des ingrédients frais. Je me déplace chez vous pour préparer des repas équilibrés et savoureux que vous n'aurez plus qu'à réchauffer.
             </p>
           </div>
@@ -107,39 +90,39 @@ export default function BatchCookingSection() {
           {/* Feature grid */}
           <div data-reveal style={{ ...reveal, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "32px" }}>
             {features.map(({ Icon, label }) => (
-              <div key={label} style={{ background: "#EDE0C4", padding: "14px 16px", display: "flex", alignItems: "center", gap: "11px" }}>
-                <Icon size={20} color="#8B5E3C" style={{ flexShrink: 0 }} />
-                <span style={{ fontFamily: BODY, fontSize: "11.5px", fontWeight: 600, color: "#2A1C12", lineHeight: 1.3 }}>{label}</span>
+              <div key={label} style={{ background: C_SECONDARY, padding: "14px 16px", display: "flex", alignItems: "center", gap: "11px" }}>
+                <Icon size={20} color={C_ACCENT} style={{ flexShrink: 0 }} />
+                <span style={{ fontFamily: BODY, fontSize: "11.5px", fontWeight: 600, color: C_PRIMARY, lineHeight: 1.3 }}>{label}</span>
               </div>
             ))}
           </div>
-
+ 
           {/* How it works */}
           <div data-reveal style={reveal}>
-            <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#8B5E3C", marginBottom: "14px" }}>
+            <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: C_ACCENT, marginBottom: "14px" }}>
               Comment ça fonctionne
             </p>
             <ol style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "8px", marginBottom: "28px" }}>
               {steps.map((step, i) => (
-                <li key={step} style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 300, color: "#5C3D24", display: "flex", alignItems: "flex-start", gap: "10px", lineHeight: 1.5 }}>
-                  <span style={{ fontFamily: DISPLAY, fontSize: "18px", color: "#D4A373", lineHeight: 1, flexShrink: 0, marginTop: "1px" }}>{i + 1}</span>
+                <li key={step} style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 300, color: C_ACCENT, display: "flex", alignItems: "flex-start", gap: "10px", lineHeight: 1.5 }}>
+                  <span style={{ fontFamily: DISPLAY, fontSize: "18px", color: C_ACCENT, lineHeight: 1, flexShrink: 0, marginTop: "1px" }}>{i + 1}</span>
                   {step}
                 </li>
               ))}
             </ol>
-
-            <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#8B5E3C", marginBottom: "10px" }}>
+ 
+            <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: C_ACCENT, marginBottom: "10px" }}>
               Idéal pour
             </p>
             <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "6px", marginBottom: "32px" }}>
               {ideal.map((item) => (
-                <li key={item} style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 300, color: "#5C3D24", display: "flex", alignItems: "center", gap: "8px" }}>
-                  <MdCheckCircleOutline size={15} color="#8B5E3C" style={{ flexShrink: 0 }} />
+                <li key={item} style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 300, color: C_ACCENT, display: "flex", alignItems: "center", gap: "8px" }}>
+                  <MdCheckCircleOutline size={15} color={C_ACCENT} style={{ flexShrink: 0 }} />
                   {item}
                 </li>
               ))}
             </ul>
-
+ 
             <WaBtn label="Réserver une session de Batch Cooking →" />
           </div>
         </div>

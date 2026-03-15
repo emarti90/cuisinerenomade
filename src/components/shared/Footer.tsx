@@ -1,6 +1,8 @@
-import { FaWhatsapp } from "react-icons/fa";
-import { BODY, DISPLAY, WA_LINK } from "../../lib/constants";
+import { FaInstagram } from "react-icons/fa";
+import { MdLocationOn } from "react-icons/md";
+import { BODY, C_ACCENT, C_PRIMARY, C_TEXT, DISPLAY, WA_LINK } from "../../lib/constants";
 import { WaBtn } from "../../lib/ui";
+import logo from "../../assets/cuisinerenomade_logo.svg";
 
 interface NavItem {
   label: string;
@@ -15,11 +17,10 @@ const nav: Record<string, NavItem[]> = {
     { label: "Brunch & Café",     href: "#brunch"        },
     { label: "Pokés & Livraison", href: "#delivery"      },
   ],
-  Infos: [
-    { label: "À propos",          href: "#"              },
-    { label: "Comment ça marche", href: "#"              },
-    { label: "FAQ",               href: "#"              },
-    { label: "WhatsApp",          href: WA_LINK, ext: true },
+  Acknowledgements: [
+    { label: "Freepik",                   href: "#batch-cooking"  },
+    { label: "Kamran Aydinov - Freepik",  href: "#brunch"         },
+    { label: "rawpixel.com - Freepik",    href: "#delivery"       },
   ],
 };
 
@@ -27,7 +28,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      style={{ background: "#0D0703", borderTop: "1px solid rgba(212,163,115,0.12)" }}
+      style={{ background: C_PRIMARY, borderTop: "1px solid rgba(212,163,115,0.12)" }}
     >
       <div
         style={{
@@ -41,30 +42,34 @@ export default function Footer() {
       >
         {/* Brand */}
         <div>
-          <div style={{ marginBottom: "18px" }}>
-            <div
-              style={{
-                fontFamily: DISPLAY,
-                fontSize: "28px",
-                fontWeight: 400,
-                color: "#F5E6C8",
-                lineHeight: 1,
-              }}
-            >
-              La Cuina
-            </div>
-            <div
-              style={{
-                fontFamily: BODY,
-                fontSize: "8px",
-                fontWeight: 600,
-                color: "#D4A373",
-                letterSpacing: "0.32em",
-                textTransform: "uppercase",
-                marginTop: "5px",
-              }}
-            >
-              de sempre
+          {/* Logo mark + wordmark */}
+          <div style={{ marginBottom: "22px", display: "flex", alignItems: "center", gap: "12px" }}>
+            <img src={logo} alt="Cuisinère Nomade" style={{ height: "48px" }} />
+            <div style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
+              <div
+                style={{
+                  fontFamily: BODY,
+                  fontSize: "16px",
+                  fontWeight: 400,
+                  color: C_TEXT,
+                  letterSpacing: "0.3em",
+                  textTransform: "uppercase",
+                  lineHeight: 1,
+                }}
+              >
+                Cuisinère
+              </div>
+              <div
+                style={{
+                  fontFamily: DISPLAY,
+                  fontSize: "48px",
+                  fontWeight: 600,
+                  color: C_ACCENT,
+                  marginTop: "5px",
+                }}
+              >
+                Nomade
+              </div>
             </div>
           </div>
           <p
@@ -73,7 +78,7 @@ export default function Footer() {
               fontSize: "12px",
               fontWeight: 300,
               lineHeight: 1.8,
-              color: "#6B4F35",
+              color: C_TEXT,
               maxWidth: "250px",
               marginBottom: "18px",
             }}
@@ -81,9 +86,13 @@ export default function Footer() {
             Cuisine à domicile, chef privé et livraison de repas — des produits de saison
             préparés avec âme.
           </p>
-          <p style={{ fontFamily: BODY, fontSize: "11px", color: "#4A3022" }}>
-            📍 Barcelone, Catalogne
-          </p>
+          {/* Location with icon */}
+          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+            <MdLocationOn size={15} color={C_ACCENT} style={{ flexShrink: 0 }} />
+            <p style={{ fontFamily: BODY, fontSize: "11px", fontWeight: 400, color: C_TEXT }}>
+              Carcassone, France
+            </p>
+          </div>
         </div>
 
         {/* Nav columns */}
@@ -96,7 +105,7 @@ export default function Footer() {
                 fontWeight: 700,
                 letterSpacing: "0.26em",
                 textTransform: "uppercase",
-                color: "#D4A373",
+                color: C_ACCENT,
                 marginBottom: "16px",
               }}
             >
@@ -122,12 +131,12 @@ export default function Footer() {
                       fontFamily: BODY,
                       fontSize: "12px",
                       fontWeight: 300,
-                      color: "#6B4F35",
+                      color: C_TEXT,
                       textDecoration: "none",
                       transition: "color 0.2s",
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#D4A373")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "#6B4F35")}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = C_ACCENT)}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = C_TEXT)}
                   >
                     {item.label}
                   </a>
@@ -146,7 +155,7 @@ export default function Footer() {
               fontWeight: 700,
               letterSpacing: "0.26em",
               textTransform: "uppercase",
-              color: "#D4A373",
+              color: C_ACCENT,
               marginBottom: "16px",
             }}
           >
@@ -158,26 +167,12 @@ export default function Footer() {
               fontSize: "12px",
               fontWeight: 300,
               lineHeight: 1.8,
-              color: "#6B4F35",
+              color: C_TEXT,
               marginBottom: "14px",
             }}
           >
             Prête à transformer votre façon de manger à la maison ?
           </p>
-          <a
-            href="mailto:hola@lacuina.es"
-            style={{
-              fontFamily: BODY,
-              fontSize: "12px",
-              fontWeight: 400,
-              color: "#C8B08A",
-              textDecoration: "none",
-              display: "block",
-              marginBottom: "8px",
-            }}
-          >
-            hola@lacuina.es
-          </a>
           <a
             href={WA_LINK}
             target="_blank"
@@ -186,18 +181,18 @@ export default function Footer() {
               fontFamily: BODY,
               fontSize: "12px",
               fontWeight: 400,
-              color: "#6B4F35",
+              color: C_TEXT,
               textDecoration: "none",
               display: "flex",
               alignItems: "center",
               gap: "6px",
               transition: "color 0.2s",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#D4A373")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#6B4F35")}
+            onMouseEnter={(e) => (e.currentTarget.style.color = C_ACCENT)}
+            onMouseLeave={(e) => (e.currentTarget.style.color = C_TEXT)}
           >
-            <FaWhatsapp size={13} color="#D4A373" />
-            WhatsApp direct
+            <FaInstagram size={13} color={C_ACCENT} />
+            @cuisinerenomade.elequilibrio
           </a>
           <div style={{ marginTop: "22px" }}>
             <WaBtn label="Réserver via WhatsApp →" dark />
@@ -205,26 +200,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div
-        style={{
-          borderTop: "1px solid rgba(212,163,115,0.08)",
-          padding: "16px 32px",
-          maxWidth: "1280px",
-          margin: "0 auto",
-          display: "flex",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          gap: "8px",
-        }}
-      >
-        <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 300, color: "#3A2518" }}>
-          © {new Date().getFullYear()} La Cuina de Sempre. Tous droits réservés.
-        </p>
-        <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 300, color: "#3A2518" }}>
-          Fait avec soin · Barcelone
-        </p>
-      </div>
 
       <style>{`
         @media (max-width: 900px) {

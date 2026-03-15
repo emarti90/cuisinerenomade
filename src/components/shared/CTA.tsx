@@ -1,4 +1,4 @@
-import { BODY, DISPLAY } from "../../lib/constants";
+import { BODY, C_ACCENT, C_PRIMARY, C_SECONDARY, DISPLAY } from "../../lib/constants";
 import { FaWhatsapp } from "react-icons/fa";
 
 const ctaButtons = [
@@ -7,12 +7,12 @@ const ctaButtons = [
   { label: "Commander des plats",         message: "Bonjour ! Je souhaite commander des plats." },
 ];
 
-export default function CTA() {
+export default function SectionCTA() {
   return (
     <section
       id="reserver"
       style={{
-        background: "#F5ECD7",
+        background: C_SECONDARY,
         padding: "120px 0",
         position: "relative",
         overflow: "hidden",
@@ -50,11 +50,11 @@ export default function CTA() {
       >
         {/* Eyebrow */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", marginBottom: "32px" }}>
-          <div style={{ width: "40px", height: "1px", background: "#8B5E3C" }} />
-          <span style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 600, letterSpacing: "0.28em", textTransform: "uppercase", color: "#8B5E3C" }}>
+          <div style={{ width: "40px", height: "1px", background: C_ACCENT }} />
+          <span style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 600, letterSpacing: "0.28em", textTransform: "uppercase", color: C_ACCENT }}>
             Nos Services Culinaires
           </span>
-          <div style={{ width: "40px", height: "1px", background: "#8B5E3C" }} />
+          <div style={{ width: "40px", height: "1px", background: C_ACCENT }} />
         </div>
 
         {/* Headline */}
@@ -64,13 +64,13 @@ export default function CTA() {
             fontSize: "clamp(56px, 7vw, 96px)",
             fontWeight: 400,
             lineHeight: 1,
-            color: "#2A1C12",
+            color: C_PRIMARY,
             marginBottom: "24px",
           }}
         >
           Mangez mieux
           <br />
-          <em style={{ color: "#8B5E3C" }}>sans perdre de temps</em>
+          <em style={{ color: C_ACCENT }}>sans perdre de temps</em>
         </h2>
 
         {/* Subline */}
@@ -80,7 +80,7 @@ export default function CTA() {
             fontSize: "16px",
             fontWeight: 300,
             lineHeight: 1.85,
-            color: "#5C3D24",
+            color: C_ACCENT,
             maxWidth: "560px",
             margin: "0 auto 56px",
           }}
@@ -117,19 +117,19 @@ export default function CTA() {
                   alignItems: "center",
                   gap: "10px",
                   padding: isPrimary ? "18px 48px" : "15px 40px",
-                  background: isPrimary ? "#2A1C12" : "transparent",
-                  color: isPrimary ? "#F5ECD7" : "#2A1C12",
+                  background: isPrimary ? C_PRIMARY : "transparent",
+                  color: isPrimary ? C_SECONDARY : C_PRIMARY,
                   border: isPrimary ? "none" : "1.5px solid rgba(42,28,18,0.35)",
                   transition: "all 0.25s ease",
                   minWidth: "320px",
                   justifyContent: "center",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = isPrimary ? "#8B5E3C" : "rgba(42,28,18,0.08)";
-                  e.currentTarget.style.borderColor = "#2A1C12";
+                  e.currentTarget.style.background = isPrimary ? C_ACCENT : "rgba(42,28,18,0.08)";
+                  e.currentTarget.style.borderColor = C_PRIMARY;
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = isPrimary ? "#2A1C12" : "transparent";
+                  e.currentTarget.style.background = isPrimary ? C_PRIMARY : "transparent";
                   e.currentTarget.style.borderColor = isPrimary ? "none" : "rgba(42,28,18,0.35)";
                 }}
               >

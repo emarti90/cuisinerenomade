@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { BODY, DISPLAY, WA_LINK } from "../../lib/constants";
+import { BODY, C_ACCENT, C_PRIMARY, C_TEXT, DISPLAY, WA_LINK } from "../../lib/constants";
 
 export default function Hero() {
   const h1  = useRef<HTMLHeadingElement>(null);
@@ -29,7 +29,7 @@ export default function Hero() {
         display: "flex",
         alignItems: "center",
         overflow: "hidden",
-        background: "#1A0F08",
+        background: C_PRIMARY,
       }}
     >
       {/* Background image */}
@@ -83,7 +83,7 @@ export default function Hero() {
             marginBottom: "28px",
           }}
         >
-          <div style={{ width: "40px", height: "1px", background: "#D4A373" }} />
+          <div style={{ width: "40px", height: "1px", background: C_ACCENT }} />
           <span
             style={{
               fontFamily: BODY,
@@ -91,7 +91,7 @@ export default function Hero() {
               fontWeight: 600,
               letterSpacing: "0.28em",
               textTransform: "uppercase",
-              color: "#D4A373",
+              color: C_ACCENT,
             }}
           >
             Chef à domicile · Livraison · Barcelone
@@ -106,14 +106,14 @@ export default function Hero() {
             fontSize: "clamp(72px,10vw,130px)",
             fontWeight: 400,
             lineHeight: 0.95,
-            color: "#F5E6C8",
+            color: C_TEXT,
             maxWidth: "860px",
             margin: "0 0 32px",
           }}
         >
           La vraie cuisine
           <br />
-          <em style={{ color: "#D4A373" }}>chez toi.</em>
+          <em style={{ color: C_ACCENT }}>chez toi.</em>
         </h1>
 
         {/* Subline */}
@@ -124,7 +124,7 @@ export default function Hero() {
             fontSize: "clamp(13px,1.5vw,16px)",
             fontWeight: 300,
             lineHeight: 1.85,
-            color: "#C8B08A",
+            color: C_TEXT,
             maxWidth: "500px",
             margin: "0 0 52px",
           }}
@@ -143,19 +143,19 @@ export default function Hero() {
               fontWeight: 700,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#2A1C12",
-              background: "#D4A373",
+              color: C_PRIMARY,
+              background: C_ACCENT,
               padding: "16px 40px",
               textDecoration: "none",
               display: "inline-block",
               transition: "all 0.25s ease",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = "#C49060";
+              e.currentTarget.style.background = C_ACCENT;
               e.currentTarget.style.transform = "translateY(-2px)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = "#D4A373";
+              e.currentTarget.style.background = C_ACCENT;
               e.currentTarget.style.transform = "translateY(0)";
             }}
           >
@@ -172,7 +172,7 @@ export default function Hero() {
               fontWeight: 700,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#E8D5B0",
+              color: C_TEXT,
               background: "transparent",
               border: "1px solid rgba(212,163,115,0.5)",
               padding: "16px 40px",
@@ -183,12 +183,12 @@ export default function Hero() {
               transition: "all 0.25s ease",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "#D4A373";
-              e.currentTarget.style.color = "#D4A373";
+              e.currentTarget.style.borderColor = C_ACCENT;
+              e.currentTarget.style.color = C_ACCENT;
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.borderColor = "rgba(212,163,115,0.5)";
-              e.currentTarget.style.color = "#E8D5B0";
+              e.currentTarget.style.color = C_TEXT;
             }}
           >
             <FaWhatsapp size={14} /> Nous contacter

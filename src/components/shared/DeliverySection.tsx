@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { FaLeaf, FaStar, FaFireAlt, FaUtensils } from "react-icons/fa";
 import { MdCheckCircleOutline } from "react-icons/md";
-import { BODY, DISPLAY, reveal} from "../../lib/constants";
+import { BODY, C_ACCENT, C_PRIMARY, C_TEXT, DISPLAY, reveal } from "../../lib/constants";
 import { DecorNum, ServiceLabel, WaBtn } from "../../lib/ui";
 import { useReveal } from "../../lib/hooks";
 
@@ -20,7 +20,7 @@ const eventItems = [
   "Petits événements",
 ];
 
-export default function DeliverySection() {
+export default function Section4Delivery() {
   const ref = useRef<HTMLElement>(null);
   useReveal(ref);
 
@@ -29,7 +29,7 @@ export default function DeliverySection() {
       id="delivery"
       ref={ref}
       style={{
-        background: "#1A0F08",
+        background: C_PRIMARY,
         padding: "120px 0",
         position: "relative",
         overflow: "hidden",
@@ -60,14 +60,14 @@ export default function DeliverySection() {
         >
           <div>
             <ServiceLabel n="Livraison & Commandes" />
-            <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(56px,6vw,84px)", fontWeight: 400, lineHeight: 1, color: "#F5E6C8", marginBottom: "8px" }}>
+            <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(56px,6vw,84px)", fontWeight: 400, lineHeight: 1, color: C_TEXT, marginBottom: "8px" }}>
               Livraison &
             </h2>
-            <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(56px,6vw,84px)", fontWeight: 400, lineHeight: 1, color: "#D4A373" }}>
+            <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(56px,6vw,84px)", fontWeight: 400, lineHeight: 1, color: C_ACCENT }}>
               Commandes
             </h2>
           </div>
-          <p style={{ fontFamily: BODY, fontSize: "14px", fontWeight: 300, lineHeight: 1.85, color: "#9A7A5A" }}>
+          <p style={{ fontFamily: BODY, fontSize: "14px", fontWeight: 300, lineHeight: 1.85, color: C_TEXT }}>
             Vous pouvez également commander certains plats et les recevoir directement chez vous ou pour vos événements. Des plats faits maison, disponibles sur commande.
           </p>
         </div>
@@ -92,8 +92,8 @@ export default function DeliverySection() {
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "28px" }}>
-              <div style={{ width: "24px", height: "1px", background: "#D4A373" }} />
-              <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#D4A373" }}>
+              <div style={{ width: "24px", height: "1px", background: C_ACCENT }} />
+              <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: C_ACCENT }}>
                 À la carte
               </p>
             </div>
@@ -105,7 +105,7 @@ export default function DeliverySection() {
                     fontFamily: BODY,
                     fontSize: "15px",
                     fontWeight: 400,
-                    color: "#C8B08A",
+                    color: C_TEXT,
                     padding: "14px 0",
                     borderBottom: "1px solid rgba(212,163,115,0.1)",
                     display: "flex",
@@ -113,7 +113,7 @@ export default function DeliverySection() {
                     gap: "12px",
                   }}
                 >
-                  <Icon size={13} color="#D4A373" style={{ flexShrink: 0 }} />
+                  <Icon size={13} color={C_ACCENT} style={{ flexShrink: 0 }} />
                   {label}
                 </li>
               ))}
@@ -135,18 +135,18 @@ export default function DeliverySection() {
           >
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "28px" }}>
-                <div style={{ width: "24px", height: "1px", background: "#D4A373" }} />
-                <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#D4A373" }}>
+                <div style={{ width: "24px", height: "1px", background: C_ACCENT }} />
+                <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: C_ACCENT }}>
                   Pour vos événements
                 </p>
               </div>
-              <p style={{ fontFamily: BODY, fontSize: "14px", fontWeight: 300, lineHeight: 1.8, color: "#9A7A5A", marginBottom: "28px" }}>
+              <p style={{ fontFamily: BODY, fontSize: "14px", fontWeight: 300, lineHeight: 1.8, color: C_TEXT, marginBottom: "28px" }}>
                 Nous proposons également des formats adaptés aux réceptions et événements privés.
               </p>
               <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "12px", marginBottom: "40px" }}>
                 {eventItems.map((item) => (
-                  <li key={item} style={{ fontFamily: BODY, fontSize: "14px", fontWeight: 300, color: "#C8B08A", display: "flex", alignItems: "center", gap: "10px" }}>
-                    <MdCheckCircleOutline size={15} color="#D4A373" style={{ flexShrink: 0 }} />
+                  <li key={item} style={{ fontFamily: BODY, fontSize: "14px", fontWeight: 300, color: C_TEXT, display: "flex", alignItems: "center", gap: "10px" }}>
+                    <MdCheckCircleOutline size={15} color={C_ACCENT} style={{ flexShrink: 0 }} />
                     {item}
                   </li>
                 ))}
@@ -155,7 +155,7 @@ export default function DeliverySection() {
 
             <div style={{ aspectRatio: "4/3", overflow: "hidden" }}>
               <img
-                src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80"
+                src="images/poke.webp"
                 alt="Plats à commander"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
@@ -178,10 +178,10 @@ export default function DeliverySection() {
           }}
         >
           <div>
-            <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "#D4A373", marginBottom: "4px" }}>
+            <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: C_ACCENT, marginBottom: "4px" }}>
               Commande sur mesure
             </p>
-            <p style={{ fontFamily: BODY, fontSize: "14px", fontWeight: 300, color: "#9A7A5A" }}>
+            <p style={{ fontFamily: BODY, fontSize: "14px", fontWeight: 300, color: C_TEXT }}>
               Contactez-nous pour connaître les disponibilités et les tarifs.
             </p>
           </div>

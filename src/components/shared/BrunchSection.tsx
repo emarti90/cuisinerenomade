@@ -1,7 +1,7 @@
 import { useRef } from "react";
-import { BODY, DISPLAY, reveal } from "../../lib/constants";
-import { DecorNum, ServiceLabel, WaBtn } from "../../lib/ui";
 import { MdCheckCircleOutline } from "react-icons/md";
+import { BODY, C_ACCENT, C_PRIMARY, C_SECONDARY, DISPLAY, reveal } from "../../lib/constants";
+import { DecorNum, ServiceLabel, WaBtn } from "../../lib/ui";
 import { useReveal } from "../../lib/hooks";
 
 const options = [
@@ -48,7 +48,7 @@ const menu = [
   },
 ];
 
-export default function BrunchSection() {
+export default function Section3Brunch() {
   const ref = useRef<HTMLElement>(null);
   useReveal(ref);
 
@@ -57,7 +57,7 @@ export default function BrunchSection() {
       id="brunch"
       ref={ref}
       style={{
-        background: "#EDE0C4",
+        background: C_SECONDARY,
         padding: "120px 0",
         position: "relative",
         overflow: "hidden",
@@ -87,39 +87,39 @@ export default function BrunchSection() {
           <div>
             <div data-reveal style={reveal}>
               <ServiceLabel n="Brunch & Café de Spécialité" light />
-              <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(56px,6vw,84px)", fontWeight: 400, lineHeight: 1, color: "#2A1C12", marginBottom: "8px" }}>
+              <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(56px,6vw,84px)", fontWeight: 400, lineHeight: 1, color: C_PRIMARY, marginBottom: "8px" }}>
                 Brunch &
               </h2>
-              <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(56px,6vw,84px)", fontWeight: 400, lineHeight: 1, color: "#8B5E3C", marginBottom: "20px" }}>
+              <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(56px,6vw,84px)", fontWeight: 400, lineHeight: 1, color: C_ACCENT, marginBottom: "20px" }}>
                 Café de Spécialité
               </h2>
-              <p style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#8B5E3C", marginBottom: "16px" }}>
+              <p style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: C_ACCENT, marginBottom: "16px" }}>
                 Un brunch sur mesure, directement chez vous
               </p>
-              <p style={{ fontFamily: BODY, fontSize: "14px", fontWeight: 300, lineHeight: 1.85, color: "#5C3D24", marginBottom: "28px", maxWidth: "400px" }}>
+              <p style={{ fontFamily: BODY, fontSize: "14px", fontWeight: 300, lineHeight: 1.85, color: C_ACCENT, marginBottom: "28px", maxWidth: "400px" }}>
                 Profitez d'un brunch convivial et gourmand, préparé avec soin et accompagné de café de spécialité. Parfait pour un moment entre amis, en famille ou pour célébrer une occasion spéciale.
               </p>
 
               {/* Options */}
-              <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#8B5E3C", marginBottom: "12px" }}>
+              <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: C_ACCENT, marginBottom: "12px" }}>
                 Options possibles
               </p>
               <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "8px", marginBottom: "24px" }}>
                 {options.map((item) => (
-                  <li key={item} style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 300, color: "#5C3D24", display: "flex", alignItems: "center", gap: "8px" }}>
-                    <MdCheckCircleOutline size={14} color="#8B5E3C" style={{ flexShrink: 0 }} />
+                  <li key={item} style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 300, color: C_ACCENT, display: "flex", alignItems: "center", gap: "8px" }}>
+                    <MdCheckCircleOutline size={14} color={C_ACCENT} style={{ flexShrink: 0 }} />
                     {item}
                   </li>
                 ))}
               </ul>
 
               {/* Ideal for */}
-              <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#8B5E3C", marginBottom: "10px" }}>
+              <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: C_ACCENT, marginBottom: "10px" }}>
                 Idéal pour
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                 {ideal.map((item) => (
-                  <span key={item} style={{ fontFamily: BODY, fontSize: "11px", fontWeight: 500, color: "#5C3D24", background: "#D4B896", padding: "5px 12px" }}>
+                  <span key={item} style={{ fontFamily: BODY, fontSize: "11px", fontWeight: 500, color: C_ACCENT, background: C_SECONDARY, padding: "5px 12px" }}>
                     {item}
                   </span>
                 ))}
@@ -131,18 +131,10 @@ export default function BrunchSection() {
           <div data-reveal style={{ ...reveal, position: "relative" }}>
             <div style={{ position: "relative", aspectRatio: "3/4", overflow: "hidden" }}>
               <img
-                src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=900&q=80"
+                src="/images/brunch.webp"
                 alt="Brunch"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
-            </div>
-            <div style={{ position: "absolute", top: "32px", left: "-32px", background: "#2A1C12", padding: "18px 20px", maxWidth: "215px" }}>
-              <p style={{ fontFamily: BODY, fontSize: "12px", fontStyle: "italic", fontWeight: 300, lineHeight: 1.6, color: "#D4A373", margin: 0 }}>
-                "Le meilleur brunch que j'aie eu en dehors d'un restaurant."
-              </p>
-              <p style={{ fontFamily: BODY, fontSize: "10px", color: "#9A7A5A", marginTop: "8px" }}>
-                — Une cliente heureuse
-              </p>
             </div>
           </div>
         </div>
@@ -165,12 +157,12 @@ export default function BrunchSection() {
                 borderRight: i < 2 ? "1px solid rgba(139,94,60,0.2)" : "none",
               }}
             >
-              <h3 style={{ fontFamily: BODY, fontSize: "9px", fontWeight: 700, letterSpacing: "0.26em", textTransform: "uppercase", color: "#8B5E3C", marginBottom: "16px" }}>
+              <h3 style={{ fontFamily: BODY, fontSize: "9px", fontWeight: 700, letterSpacing: "0.26em", textTransform: "uppercase", color: C_ACCENT, marginBottom: "16px" }}>
                 {g.category}
               </h3>
               <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
                 {g.items.map((item) => (
-                  <li key={item} style={{ fontFamily: BODY, fontSize: "12.5px", fontWeight: 400, color: "#2A1C12", padding: "10px 0", borderBottom: "1px solid rgba(139,94,60,0.1)", lineHeight: 1.4 }}>
+                  <li key={item} style={{ fontFamily: BODY, fontSize: "12.5px", fontWeight: 400, color: C_PRIMARY, padding: "10px 0", borderBottom: "1px solid rgba(139,94,60,0.1)", lineHeight: 1.4 }}>
                     {item}
                   </li>
                 ))}

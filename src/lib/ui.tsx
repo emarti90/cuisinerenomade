@@ -1,5 +1,5 @@
 import { FaWhatsapp } from "react-icons/fa";
-import { BODY, WA_LINK } from "./constants";
+import { BODY, C_ACCENT, C_PRIMARY, C_SECONDARY, WA_LINK } from "./constants";
 
 // ─── WhatsApp CTA button ──────────────────────────────────────────────────────
 interface WaBtnProps {
@@ -25,8 +25,8 @@ export function WaBtn({ label, dark = false, style = {} }: WaBtnProps) {
     ...style,
   };
   const colors = dark
-    ? { color: "#2A1C12", background: "#D4A373" }
-    : { color: "#F5ECD7", background: "#2A1C12" };
+    ? { color: C_PRIMARY, background: C_ACCENT }
+    : { color: C_SECONDARY, background: C_PRIMARY };
 
   return (
     <a
@@ -35,10 +35,10 @@ export function WaBtn({ label, dark = false, style = {} }: WaBtnProps) {
       rel="noreferrer"
       style={{ ...base, ...colors }}
       onMouseEnter={(e) =>
-        (e.currentTarget.style.background = dark ? "#C49060" : "#8B5E3C")
+        (e.currentTarget.style.background = dark ? C_ACCENT : C_ACCENT)
       }
       onMouseLeave={(e) =>
-        (e.currentTarget.style.background = dark ? "#D4A373" : "#2A1C12")
+        (e.currentTarget.style.background = dark ? C_ACCENT : C_PRIMARY)
       }
     >
       <FaWhatsapp size={15} />
@@ -95,7 +95,7 @@ export function ServiceLabel({ n, light = false }: ServiceLabelProps) {
         style={{
           width: "32px",
           height: "1px",
-          background: light ? "#8B5E3C" : "#D4A373",
+          background: light ? C_ACCENT : C_ACCENT,
         }}
       />
       <span
@@ -105,7 +105,7 @@ export function ServiceLabel({ n, light = false }: ServiceLabelProps) {
           fontWeight: 600,
           letterSpacing: "0.26em",
           textTransform: "uppercase",
-          color: light ? "#8B5E3C" : "#D4A373",
+          color: light ? C_ACCENT : C_ACCENT,
         }}
       >
         Service {n}

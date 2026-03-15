@@ -1,8 +1,8 @@
 import { useRef } from "react";
-import { BODY, DISPLAY, reveal} from "../../lib/constants";
 import { GiMeal, GiPeaceDove, GiCook, GiCalendar } from "react-icons/gi";
-import { DecorNum, ServiceLabel, WaBtn } from "../../lib/ui";
 import { MdCheckCircleOutline } from "react-icons/md";
+import { BODY, DISPLAY, C_ACCENT, C_PRIMARY, C_TEXT, reveal } from "../../lib/constants";
+import { DecorNum, ServiceLabel, WaBtn } from "../../lib/ui";
 import { useReveal } from "../../lib/hooks";
 
 const includes = [
@@ -41,7 +41,7 @@ const pillars = [
   },
 ];
 
-export default function PostPartumSection() {
+export default function Section2PostPartum() {
   const ref = useRef<HTMLElement>(null);
   useReveal(ref, 140);
 
@@ -50,7 +50,7 @@ export default function PostPartumSection() {
       id="post-partum"
       ref={ref}
       style={{
-        background: "#2A1C12",
+        background: C_PRIMARY,
         padding: "120px 0",
         position: "relative",
         overflow: "hidden",
@@ -89,16 +89,16 @@ export default function PostPartumSection() {
         >
           <div data-reveal style={reveal}>
             <ServiceLabel n="Batch Cooking Post-Partum" />
-            <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(56px,6vw,84px)", fontWeight: 400, lineHeight: 1, color: "#F5E6C8", marginBottom: "8px" }}>
+            <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(56px,6vw,84px)", fontWeight: 400, lineHeight: 1, color: C_TEXT, marginBottom: "8px" }}>
               Post Partum
             </h2>
-            <p style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#D4A373", marginBottom: 0 }}>
+            <p style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: C_ACCENT, marginBottom: 0 }}>
               Batch Cooking
             </p>
           </div>
 
           <div data-reveal style={reveal}>
-            <p style={{ fontFamily: BODY, fontSize: "14px", fontWeight: 300, lineHeight: 1.85, color: "#C8B08A", borderLeft: "2px solid #D4A373", paddingLeft: "22px" }}>
+            <p style={{ fontFamily: BODY, fontSize: "14px", fontWeight: 300, lineHeight: 1.85, color: C_TEXT, borderLeft: "2px solid #D4A373", paddingLeft: "22px" }}>
               Les premières semaines avec un nouveau-né sont précieuses et intenses. Ce service est conçu pour vous permettre de vous concentrer uniquement sur votre bébé, pendant que je m'occupe de votre alimentation. Pendant un mois, je vous accompagne avec des repas adaptés à la récupération post-partum.
             </p>
           </div>
@@ -129,12 +129,12 @@ export default function PostPartumSection() {
               }}
             >
               <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "48px", height: "48px", borderRadius: "50%", background: "rgba(212,163,115,0.12)", marginBottom: "16px" }}>
-                <p.Icon size={22} color="#D4A373" />
+                <p.Icon size={22} color={C_ACCENT} />
               </div>
-              <h3 style={{ fontFamily: BODY, fontSize: "12px", fontWeight: 700, color: "#F5E6C8", marginBottom: "10px", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+              <h3 style={{ fontFamily: BODY, fontSize: "12px", fontWeight: 700, color: C_TEXT, marginBottom: "10px", letterSpacing: "0.06em", textTransform: "uppercase" }}>
                 {p.title}
               </h3>
-              <p style={{ fontFamily: BODY, fontSize: "12px", fontWeight: 300, lineHeight: 1.75, color: "#9A7A5A" }}>
+              <p style={{ fontFamily: BODY, fontSize: "12px", fontWeight: 300, lineHeight: 1.75, color: C_TEXT }}>
                 {p.desc}
               </p>
             </div>
@@ -155,31 +155,31 @@ export default function PostPartumSection() {
           }}
         >
           <div>
-            <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#D4A373", marginBottom: "16px" }}>
+            <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: C_ACCENT, marginBottom: "16px" }}>
               Le service inclut
             </p>
             <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
               {includes.map((item) => (
-                <li key={item} style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 300, color: "#C8B08A", display: "flex", alignItems: "flex-start", gap: "10px", lineHeight: 1.5 }}>
-                  <MdCheckCircleOutline size={15} color="#D4A373" style={{ flexShrink: 0, marginTop: "2px" }} />
+                <li key={item} style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 300, color: C_TEXT, display: "flex", alignItems: "flex-start", gap: "10px", lineHeight: 1.5 }}>
+                  <MdCheckCircleOutline size={15} color={C_ACCENT} style={{ flexShrink: 0, marginTop: "2px" }} />
                   {item}
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#D4A373", marginBottom: "16px" }}>
+            <p style={{ fontFamily: BODY, fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: C_ACCENT, marginBottom: "16px" }}>
               Je m'occupe de tout
             </p>
             <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "10px", marginBottom: "20px" }}>
               {iHandleIt.map((item) => (
-                <li key={item} style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 300, color: "#C8B08A", display: "flex", alignItems: "center", gap: "10px" }}>
-                  <MdCheckCircleOutline size={15} color="#D4A373" style={{ flexShrink: 0 }} />
+                <li key={item} style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 300, color: C_TEXT, display: "flex", alignItems: "center", gap: "10px" }}>
+                  <MdCheckCircleOutline size={15} color={C_ACCENT} style={{ flexShrink: 0 }} />
                   {item}
                 </li>
               ))}
             </ul>
-            <p style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 300, lineHeight: 1.7, color: "#9A7A5A", fontStyle: "italic" }}>
+            <p style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 300, lineHeight: 1.7, color: C_TEXT, fontStyle: "italic" }}>
               Votre cuisine est remplie de plats prêts à être dégustés, pour que vous puissiez vous reposer et profiter de votre bébé.
             </p>
           </div>
@@ -199,7 +199,7 @@ export default function PostPartumSection() {
             gap: "20px",
           }}
         >
-          <p style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 300, color: "#9A7A5A" }}>
+          <p style={{ fontFamily: BODY, fontSize: "13px", fontWeight: 300, color: C_TEXT }}>
             Offrez ce service à une jeune maman — le cadeau le plus précieux.
           </p>
           <WaBtn label="Découvrir l'accompagnement post-partum →" dark />

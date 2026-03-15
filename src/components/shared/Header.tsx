@@ -1,58 +1,36 @@
 import { useState, useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { BODY, DISPLAY, WA_LINK } from "../../lib/constants";
+import { BODY, C_ACCENT, C_PRIMARY, C_TEXT, DISPLAY, WA_LINK } from "../../lib/constants";
+import logo  from "../../assets/cuisinerenomade_logo.svg";
 
 // ─── Logo ─────────────────────────────────────────────────────────────────────
-// Once logo.svg is in /src/assets/logo.svg, replace Logo() with:
-//   import logoSrc from "../assets/logo.svg";
-//   <img src={logoSrc} alt="La Cuina de Sempre" style={{ height: "48px" }} />
 function Logo() {
   return (
     <a
       href="#"
       style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}
     >
-      {/* SVG placeholder — swap for <img src="/assets/logo.svg"> when ready */}
-      <svg
-        width="36"
-        height="36"
-        viewBox="0 0 36 36"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle cx="18" cy="18" r="17" stroke="#D4A373" strokeWidth="1.2" />
-        <path
-          d="M18 8 C12 14 10 20 18 28 C26 20 24 14 18 8Z"
-          fill="#D4A373"
-          opacity="0.7"
-        />
-        <path
-          d="M12 16 Q18 12 24 16"
-          stroke="#F5E6C8"
-          strokeWidth="1"
-          fill="none"
-        />
-      </svg>
+      <img src={logo} alt="Cuisinère Nomade" style={{ height: "48px" }} />
       <div style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
+        <span
+          style={{
+            fontFamily: BODY,
+            fontSize: "12px",
+            fontWeight: 400,
+            color: C_TEXT,
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            lineHeight: 1,
+          }}
+        >
+          Cuisinére
+        </span>
         <span
           style={{
             fontFamily: DISPLAY,
             fontSize: "28px",
-            fontWeight: 400,
-            color: "#F5E6C8",
-            lineHeight: 1,
-          }}
-        >
-          Cuisinère
-        </span>
-        <span
-          style={{
-            fontFamily: BODY,
-            fontSize: "7.5px",
             fontWeight: 600,
-            color: "#D4A373",
-            letterSpacing: "0.32em",
-            textTransform: "uppercase",
+            color: C_ACCENT,
             marginTop: "3px",
           }}
         >
@@ -123,12 +101,12 @@ export default function Header() {
                 fontWeight: 500,
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
-                color: "#E8D5B0",
+                color: C_TEXT,
                 textDecoration: "none",
                 transition: "color 0.2s",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#D4A373")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#E8D5B0")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = C_ACCENT)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = C_TEXT)}
             >
               {l.label}
             </a>
@@ -145,8 +123,8 @@ export default function Header() {
               fontWeight: 700,
               letterSpacing: "0.14em",
               textTransform: "uppercase",
-              color: "#2A1C12",
-              background: "#D4A373",
+              color: C_PRIMARY,
+              background: C_ACCENT,
               padding: "10px 20px",
               textDecoration: "none",
               transition: "background 0.2s",
@@ -154,8 +132,8 @@ export default function Header() {
               alignItems: "center",
               gap: "6px",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "#C49060")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "#D4A373")}
+            onMouseEnter={(e) => (e.currentTarget.style.background = C_ACCENT)}
+            onMouseLeave={(e) => (e.currentTarget.style.background = C_ACCENT)}
           >
             <FaWhatsapp size={14} /> Réserver
           </a>
@@ -183,7 +161,7 @@ export default function Header() {
                 display: "block",
                 width: "24px",
                 height: "1.5px",
-                background: "#E8D5B0",
+                background: C_TEXT,
               }}
             />
           ))}
@@ -210,7 +188,7 @@ export default function Header() {
                 fontFamily: BODY,
                 fontSize: "15px",
                 fontWeight: 500,
-                color: "#E8D5B0",
+                color: C_TEXT,
                 textDecoration: "none",
               }}
             >
