@@ -83,7 +83,7 @@ export default function BatchCookingSection() {
               Des repas faits maison pour toute la semaine
             </p>
             <p style={{ fontFamily: BODY, fontSize: "14px", fontWeight: 300, lineHeight: 1.85, color: C_ACCENT, marginBottom: "32px", maxWidth: "420px" }}>
-              Le batch cooking vous permet d'avoir plusieurs repas prêts à l'avance, cuisinés directement dans votre cuisine avec des ingrédients frais. Je me déplace chez vous pour préparer des repas équilibrés et savoureux que vous n'aurez plus qu'à réchauffer.
+              Le batch cooking vous permet d'avoir plusieurs repas prêts à l'avance, cuisinés directement dans votre cuisine avec des ingrédients frais. Je me déplace chez vous pour préparer des repas équilibrés et savoureux que vous n'aurez plus qu'à réchauffer. Chaque client a des goûts et des préférences différents, qu’il s’agisse de privilégier des marques plus écologiques ou certains types de produits. Un questionnaire est proposé afin de mieux connaître vos goûts, vos allergies et vos éventuelles intolérances. Le budget varie en fonction du nombre de personnes ainsi que du nombre de plats préparés par semaine.
             </p>
           </div>
 

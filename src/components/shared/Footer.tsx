@@ -1,6 +1,6 @@
 import { FaInstagram } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
-import { BODY, C_ACCENT, C_PRIMARY, C_TEXT, DISPLAY, WA_LINK } from "../../lib/constants";
+import { BODY, C_ACCENT, C_PRIMARY, C_TEXT, DISPLAY } from "../../lib/constants";
 import { WaBtn } from "../../lib/ui";
 import logo from "../../assets/cuisinerenomade_logo.svg";
 
@@ -90,7 +90,7 @@ export default function Footer() {
           <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
             <MdLocationOn size={15} color={C_ACCENT} style={{ flexShrink: 0 }} />
             <p style={{ fontFamily: BODY, fontSize: "11px", fontWeight: 400, color: C_TEXT }}>
-              Carcassone, France
+              Castelnaudary, France
             </p>
           </div>
         </div>
@@ -174,7 +174,7 @@ export default function Footer() {
             Prête à transformer votre façon de manger à la maison ?
           </p>
           <a
-            href={WA_LINK}
+            href={"https://www.instagram.com/cusinierenomade.elequilibrio/"}
             target="_blank"
             rel="noreferrer"
             style={{

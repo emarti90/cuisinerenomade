@@ -94,7 +94,7 @@ export default function Hero() {
               color: C_ACCENT,
             }}
           >
-            Chef à domicile · Livraison · Barcelone
+            Chef à domicile · Livraison · Castelnaudary
           </span>
         </div>
 
